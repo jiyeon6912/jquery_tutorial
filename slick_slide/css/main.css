@@ -1,0 +1,236 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: red; */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  display: block; /*block 이지만 간격이 붙어있는것은 header부모요소에서 flex이기 때문임.*/
+  padding: 30px 50px;
+  /* background: red; */
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+.slider {
+  position: relative;
+}
+
+.slide .item {
+  background: royalblue;
+  height: 100vh;
+  /* height: 500px; */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slide .item_01 {
+  background-image: url(../images/slide_01.jpg);
+}
+
+.slide .item_02 {
+  background-image: url(../images/slide_02.jpg);
+}
+
+.slide .item_03 {
+  background-image: url(../images/slide_03.jpg);
+}
+
+/* slide_text */
+.slide_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.slide_text h4 {
+  opacity: 0;
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  animation: ani_scale 0.5s forwards; /*forwards 애니메이션이 한번만 실행*/
+}
+
+.slide_text .line {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  /* background: red; */
+  opacity: 0;
+  position: relative;
+  animation: ani_line 0.5s 0.5s forwards;
+}
+
+.slide_text .line::before,
+.slide_text .line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  height: 2px;
+  background: #111;
+}
+
+.slide_text .line::before {
+  left: 0;
+}
+
+.slide_text .line::after {
+  right: 0;
+}
+
+.slide_text i {
+  font-size: 30px;
+  opacity: 0;
+  transform: rotate(180deg);
+  animation: ani_rotate 0.5s 0.8s forwards;
+  /* animation: ani_rotate 0.5s 0.8s infinite; */
+}
+
+.slide_text .info {
+  position: relative;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.slide_text .btn {
+  position: relative;
+  background: rgb(57, 96, 212);
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  padding: 16px 34px;
+  border-radius: 6px;
+  animation: ani_flashing 1s 4s 2;
+}
+
+/* typing animation */
+
+.slide_text p.info {
+  /* text-align: center; */
+  font-size: 20px;
+  /* font-weight: bold; */
+  /* position: relative; */
+  /* display: inline-block; */
+  height: 35px;
+  overflow: hidden;
+  animation: ani_typing 3s 1s steps(120, end) 1; /*애니메이션 빠르기, 순차적 시작시간*/
+}
+
+/* animation */
+@keyframes ani_scale {
+  0% {
+    transform: scale(2); /*animation 시작할때*/
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1); /*animation 시작할때 scale의 기본은 1*/
+    opacity: 1;
+  }
+}
+
+@keyframes ani_line {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ani_rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ani_typing {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+@keyframes ani_flashing {
+  0% {
+    background: rgb(57, 96, 212);
+    color: #fff;
+  }
+  100% {
+    background: rgb(212, 57, 70);
+    color: #111;
+  }
+}
+
+/* arrow */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  /* background: red; */
+  padding: 0 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  font-size: 60px;
+}
+
+.arrow i {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  /* border-radius: 50%; */
+}
+
+/* content */
+.content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  line-height: 1.6;
+}
+
+.content h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 60px 0;
+}
+
+.content p {
+  padding: 1rem;
+}
+
+/* slick */
+.slick-dots {
+  bottom: 50px;
+}

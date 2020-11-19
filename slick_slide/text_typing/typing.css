@@ -1,0 +1,40 @@
+/* 텍스트 타이핑효과 */
+p.typing-txt {
+  /* font-size: 30px; */
+  /* font-weight: bold; */
+  position: relative;
+  display: inline-block;
+  height: 22px;
+  overflow: hidden;
+  animation: typingAni 4s steps(30, end) 1;
+}
+p.typing-txt::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 20px;
+  height: 13px;
+  top: 3px;
+  right: 0;
+  border-right: 1px solid #000;
+  animation: cursor 0.5s step-end infinite;
+}
+@keyframes typingAni {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 150px;
+  }
+}
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

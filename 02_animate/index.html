@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> <!-- jquery code 사용을 위한 cdn 연결 1-->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!-- jquery ui code 사용을 위한 cdn 연결 2 jquery사용시 1과2를 함께 연결함.-->
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | Amiamate</title>
+  </head>
+  <body>
+    <div class="container">
+      <button>Click Me!</button>
+      <div class="box"></div>
+    </div>
+
+    <script>
+      var btn = $('.container button')
+      var box = $('.box')
+
+      btn.click(function () {
+        box.animate({ width: 900 }, 2000, 'easeOutBounce', function () {
+          box.animate({ width: 300 }, 1000)
+        })
+      })
+
+      box.on('mouseover', function () {
+        $(this).stop().animate({ width: 900 }, 1000, 'easeOutBounce')  
+        //.stop() 매서드는 애니메이션을 연속적으로 여러번 실행할때 큐에 누적된 데이타를 삭제 que clear하고 마지막에 실행된 애니메이션만 실행하게함.
+      })
+
+      box.on('mouseleave', function () {
+        $(this).stop().animate({ width: 300 }, 1000, 'easeOutBounce')
+      })
+    </script>
+  </body>
+</html>
