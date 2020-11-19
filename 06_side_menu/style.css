@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #666;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #eee;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.side {
+  position: fixed;
+  top: 0;
+  right: -300px; /*자신이 너비가 300px이므로 동일수치만큼 오른쪽이동하여 화면에서 숨긴다*/
+  width: 300px;
+  height: 100vh;
+  background: #fff;
+  color: #666;
+  padding: 2rem;
+  transition: right 0.5s cubic-bezier(0.67, 0.09, 0.26, 0.95);
+}
+
+.active {
+  right: 0;
+}
+
+.banner {
+  height: 100px;
+  background: #eee;
+  line-height: 100px;
+  margin: 10px 0;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -40px; /*자신이 40px이므로 동일수치만큼 왼쪽이동하여 화면맨 왼쪽으로 이동*/
+  background: #fff;
+  line-height: 40px;
+  font-size: 22px;
+  cursor: pointer;
+  text-align: center;
+}

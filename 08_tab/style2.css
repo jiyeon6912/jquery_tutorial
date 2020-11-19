@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #999;
+}
+
+.tab li {
+  border: 1px solid #999;
+  background: #eee;
+  margin-right: -1px; /*border 1px가 서로 겹쳐서 두껍게 보이는 것을 처리함.*/
+  margin-bottom: -1px;
+}
+
+.tab li.active {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.tab a {
+  display: block;
+  padding: 10px 30px;
+}
+
+.content {
+  padding: 2rem;
+  border: 1px solid #999;
+  border-top: none;
+}

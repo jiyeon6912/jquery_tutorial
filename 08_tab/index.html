@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | tab</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>tab</h1>
+
+      <ul class="tab">
+        <li><a href="#">tab1</a></li>
+        <li><a href="#">tab2</a></li>
+        <li><a href="#">tab3</a></li>
+        <li><a href="#">tab4</a></li>
+      </ul>
+
+      <div class="content">
+        <img src="./images/group_01.jpg" alt="">
+      </div>
+
+      <div class="content">
+        <img src="./images/group_02.jpg" alt="">
+      </div>
+
+      <div class="content">
+        <img src="./images/group_03.jpg" alt="">
+      </div>
+
+      <div class="content">
+        <img src="./images/group_04.jpg" alt="">
+      </div>
+
+    </div>
+
+    <script>
+      var btn = $('.tab li')
+      var content = $('.content')
+
+      btn.eq(0).find('a').addClass('active')
+      content.hide().eq(0).show()
+
+      btn.click(function(){
+        btn.find('a').removeClass('active')
+        $(this).find('a').addClass('active')
+
+        content.hide()
+
+        var activeIndex = $(this).index()
+        console.log(activeIndex)
+        content.eq(activeIndex).show()
+      })
+    </script>
+  </body>
+</html>

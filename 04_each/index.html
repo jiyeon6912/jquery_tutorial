@@ -20,10 +20,10 @@
         <div class="card_photo">
           <img src="./images/group_03.jpg" alt="img" />
           <div class="sns">
-            <i class="xi-share-alt-o"></i>
-            <i class="xi-apple"></i>
-            <i class="xi-blogger"></i>
-            <i class="xi-kakaotalk"></i>
+            <span class="share"><i class="xi-share-alt-o"></i></span>
+            <span><i class="xi-apple"></i></span>
+            <span><i class="xi-blogger"></i></span>
+            <span><i class="xi-kakaotalk"></i></span>
           </div>
         </div>
         <div class="card_info">
@@ -36,7 +36,22 @@
       </div>
     </div>
 
-    <script></script>
+    <script>
+      var sns = $('.sns')
+      var item = $('.sns span')
+
+      sns.hover(function(){
+        item.each(function(index){
+          // console.log(index)
+          $(this).animate({left: -(index * 50)},300)
+        })
+      },function(){
+        item.each(function(index){
+          // console.log(index)
+          $(this).animate({left: 0},300)
+        })
+      })
+    </script>
   </body>
 </html>
      

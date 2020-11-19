@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | accordion</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>accordion</h1>
+
+      <div class="accordion">
+        <h2>This is title 01</h2>
+        <p class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Nisi unde asperiores necessitatibus natus deserunt velit officia. 
+           labore tenetur cum ea assumenda obcaecati possimus nam, deleniti eveniet expedita, 
+           accusantium voluptatem exercitationem vero iure ipsum illo praesentium 
+           impedit porro optio nihil libero accusamus provident laboriosam cupiditate? 
+           Fugit, tenetur. Eveniet, eos illo.</p>
+
+           <h2>This is title 02</h2>
+        <p class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Nisi unde asperiores necessitatibus natus deserunt velit officia. 
+           labore tenetur cum ea assumenda obcaecati possimus nam, deleniti eveniet expedita, 
+           accusantium voluptatem exercitationem vero iure ipsum illo praesentium 
+           impedit porro optio nihil libero accusamus provident laboriosam cupiditate? 
+           Fugit, tenetur. Eveniet, eos illo.</p>
+
+           <h2>This is title 03</h2>
+        <p class="content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Nisi unde asperiores necessitatibus natus deserunt velit officia. 
+           labore tenetur cum ea assumenda obcaecati possimus nam, deleniti eveniet expedita, 
+           accusantium voluptatem exercitationem vero iure ipsum illo praesentium 
+           impedit porro optio nihil libero accusamus provident laboriosam cupiditate? 
+           Fugit, tenetur. Eveniet, eos illo.</p>
+      </div>
+    </div>
+
+    <script>
+      //accordion 1
+      // var title = $('.accordion h2')
+      // title.eq(0).addClass('active').next().slideDown() //초기화 accordion 박스가 열린상태에서 시작
+
+      // title.click(function(){
+      //   $(this).toggleClass('active')
+      //   $(this).next().slideToggle()
+      // })
+
+      //accordion 2
+
+      var title = $('.accordion h2')
+      title.eq(0).addClass('active').next().slideDown() //초기화 accordion 박스가 열린상태에서 시작
+      title.click(function(){
+        var content = $(this).next()
+
+        $(this).parent('.accordion').find('p').not(content).slideUp()
+        content.slideToggle()
+
+        if($(this).hasClass('active')) {
+          $(this).removeClass('active')
+        } else {
+          $(this).addClass('active')
+        }
+      })
+
+    </script>
+  </body>
+</html>

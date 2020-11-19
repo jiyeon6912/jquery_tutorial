@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | lightbox</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ligthbox</h1>
+
+      <ul class="cards">
+        <li>
+          <img src="./images/group_01.jpg" data-img="./images/group_01_big.jpg" alt="img"/>
+        </li>
+<!-- lightbox 만들때 크게 확대되어 팝업되는 이미지의 url을 지정하는 형식은 'data-'는 고정 이후 이름은 user_name 지정가능함. -->
+<!-- 예를 들어 data-img, data-popupimg 등... -->
+        <li>
+          <img src="./images/group_02.jpg" data-img="./images/group_02_big.jpg" alt="img"/>
+        </li>
+
+        <li>
+          <img src="./images/group_03.jpg" data-img="./images/group_03_big.jpg" alt="img"/>
+        </li>
+
+        <li>
+          <img src="./images/group_04.jpg" data-img="./images/group_04_big.jpg" alt="img"/>
+        </li>
+      </ul>
+
+      <div class="dimm">
+        <img src="" alt="big_img" />
+      </div>
+    </div>
+
+    <script>
+      var item = $('.cards li')
+      var dimm = $('.dimm')
+      var dimmImg = dimm.find('img')
+
+      // console.log(item)
+      // console.log(dimm)
+      // console.log(dimmImg)
+
+      item.click(function(){
+        var dataImg = $(this).find('img').attr('data-img')
+        // console.log(dataImg)
+        // dimm.show()
+        dimm.addClass('show')
+        dimmImg.attr('src',dataImg)
+      })
+
+      dimm.click(function(){
+        $(this).removeClass('show')
+      })
+    </script>
+  </body>
+</html>
