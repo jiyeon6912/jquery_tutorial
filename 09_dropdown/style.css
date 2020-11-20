@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+}
+
+.container {
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px; /*반응형일때 a tag에 높이가 지정되어 있어도 햄버거메뉴를 위해서 별도 높이 지정함*/
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 0 40px;
+}
+
+.gnb {
+  display: flex;
+  text-align: center;
+}
+
+.gnb > li {
+  height: 80px; /*반응형일때 a tag에 높이가 지정되어 있어도 햄버거메뉴를 위해서 별도 높이 지정함*/
+}
+
+.gnb > li > a {
+  /*a tag에 높이지정과 display:block 지정이 중요함!*/
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 40px;
+}
+
+.gnb ul {
+  background: #fff;
+  display: none;
+}
+
+.gnb ul li a {
+  display: block;
+  padding: 0.8rem 1rem;
+}
+
+main {
+  background: #ddd;
+  /* display: none; */
+  padding-top: 80px;
+}
+
+main p {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
