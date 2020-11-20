@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | sticky menu</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Sticky Menu</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+          voluptatibus eos cum impedit odit, autem ea odio? Nobis ducimus autem
+          voluptatum illum vitae id. Animi natus quidem dignissimos officiis
+          beatae.
+        </p>
+
+        <nav id="nav">
+          <ul class="gnb">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+            <li>menu6</li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+          voluptates tempora saepe nihil iure maiores et, voluptatem, soluta
+          veritatis ut quisquam facere itaque aperiam mollitia eligendi qui.
+          Officia accusamus assumenda excepturi totam quaerat porro itaque fuga
+          nam, autem fugit enim quidem aut iusto error magni necessitatibus
+          ullam unde sapiente distinctio. Suscipit iste doloremque omnis
+          aspernatur deserunt ducimus neque placeat libero impedit alias.
+          Similique delectus placeat ut distinctio tempora, consequatur, est
+          nesciunt laudantium saepe, itaque accusantium ducimus ipsum voluptatem
+          quam illo magni. Eos magni, officia ex nam fugiat soluta distinctio
+          inventore in cum! Eaque at explicabo tenetur amet eveniet, omnis velit
+          quae in? Maxime aliquid sit harum est culpa, rem neque at saepe? Nemo
+          accusamus minima officia asperiores suscipit voluptates quasi eius hic
+          quae! Sint, iure. Quae exercitationem perspiciatis id dolorum
+          assumenda dolore doloremque, repudiandae quibusdam magni temporibus
+          ipsum neque eveniet ullam reprehenderit iusto distinctio architecto
+          hic. Sapiente minima vero harum inventore quasi, eveniet aperiam
+          nostrum porro unde rem ipsa, itaque eius necessitatibus numquam natus
+          doloribus ex! Nam quos accusantium cupiditate dolorum, suscipit eum
+          quaerat qui? Odio reiciendis ut, modi placeat recusandae quia aperiam
+          adipisci distinctio quis? Reiciendis non iste, cumque vel a magnam
+          quis repellat nemo minima et assumenda tempora, architecto sed,
+          consequuntur iure consequatur fugit quo? Nobis enim cum voluptates
+          reprehenderit unde. Sunt reprehenderit odit laboriosam quae neque, eos
+          eligendi optio cum obcaecati ratione, quasi illum praesentium corporis
+          sint totam? Ut laboriosam accusantium saepe perspiciatis tenetur hic
+          soluta quisquam facere odit nobis amet facilis, repudiandae ratione
+          sed obcaecati. Necessitatibus vel perspiciatis cupiditate dignissimos
+          doloribus excepturi reprehenderit reiciendis pariatur nemo in autem
+          fugiat explicabo doloremque sapiente, corporis cum! Tempora voluptas
+          magnam non iusto neque. Laudantium dolores dolorem cupiditate illo,
+          ratione quidem quod, inventore rem porro aut autem numquam unde
+          mollitia libero officia eveniet sapiente nobis a repudiandae!
+          Repellendus deleniti excepturi asperiores provident inventore minus
+          esse praesentium error fugiat eveniet id dolorem quibusdam quia,
+          repudiandae sapiente. Omnis a rem excepturi temporibus hic, impedit
+          aspernatur reiciendis qui nam totam! Cumque quaerat necessitatibus
+          asperiores explicabo in sapiente dolore consectetur magnam velit
+          voluptate sit temporibus, incidunt, laudantium, consequatur sed fugiat
+          doloribus. Ratione labore debitis ut enim asperiores excepturi
+          eligendi, ullam facilis aspernatur earum ipsa voluptatibus minima eius
+          sunt neque deserunt perspiciatis molestias tempore magni tenetur!
+          Exercitationem animi, est delectus, et nulla nostrum ab earum, fuga
+          iure reiciendis harum. Pariatur debitis velit laudantium sint, nobis
+          ipsa autem ducimus enim inventore dolorum iste provident sed
+          asperiores itaque doloribus est placeat eligendi id obcaecati. Minus
+          tempore autem doloribus saepe cupiditate iusto quis nisi magnam
+          doloremque velit debitis labore quibusdam commodi deleniti enim
+          perspiciatis optio cum, distinctio quo, amet ab hic esse vero fugiat.
+          Dolores, natus veniam alias culpa porro blanditiis eius at quis,
+          numquam ipsa aut placeat beatae? Excepturi ipsam natus aut commodi
+          molestiae minus! Amet unde impedit recusandae at placeat, assumenda
+          pariatur corporis ullam quibusdam quod aspernatur iste cupiditate
+          tempora nemo officiis debitis. Ipsum quod quisquam animi, dolores
+          commodi adipisci aperiam quas, soluta debitis corrupti nostrum laborum
+          minima aut, iste optio quo eveniet! Ut, beatae iure?
+        </p>
+      </main>
+    </div>
+
+    <script>
+      var nav = $('#nav')
+      var navOffsetValue = nav.offset().top  //offset 은 top애서 떨어진 값이다.
+    //  console.log(navOffsetValue)
+
+    $(window).scroll(function () {
+        var scrollTopValue = $(document).scrollTop()
+
+        if (scrollTopValue > navOffsetValue) {
+          nav.addClass('fixed')
+        } else {
+          nav.removeClass('fixed')
+        }
+      })
+    
+    </script>
+  </body>
+</html>

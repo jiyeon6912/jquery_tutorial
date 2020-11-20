@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | nav clone</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <nav class="nav">
+          <div class="logo"><img src="./images/logo.svg" alt="" /></div>
+          <ul class="gnb">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+            <li>menu6</li>
+          </ul>
+          <div class="social">
+            <a href="#"><i class="xi-kakaotalk"></i></a>
+            <a href="#"><i class="xi-youtube-play"></i></a>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+          voluptates tempora saepe nihil iure maiores et, voluptatem, soluta
+          veritatis ut quisquam facere itaque aperiam mollitia eligendi qui.
+          Officia accusamus assumenda excepturi totam quaerat porro itaque fuga
+          nam, autem fugit enim quidem aut iusto error magni necessitatibus
+          ullam unde sapiente distinctio. Suscipit iste doloremque omnis
+          aspernatur deserunt ducimus neque placeat libero impedit alias.
+          Similique delectus placeat ut distinctio tempora, consequatur, est
+          nesciunt laudantium saepe, itaque accusantium ducimus ipsum voluptatem
+          quam illo magni. Eos magni, officia ex nam fugiat soluta distinctio
+          inventore in cum! Eaque at explicabo tenetur amet eveniet, omnis velit
+          quae in? Maxime aliquid sit harum est culpa, rem neque at saepe? Nemo
+          accusamus minima officia asperiores suscipit voluptates quasi eius hic
+          quae! Sint, iure. Quae exercitationem perspiciatis id dolorum
+          assumenda dolore doloremque, repudiandae quibusdam magni temporibus
+          ipsum neque eveniet ullam reprehenderit iusto distinctio architecto
+          hic. Sapiente minima vero harum inventore quasi, eveniet aperiam
+          nostrum porro unde rem ipsa, itaque eius necessitatibus numquam natus
+          doloribus ex! Nam quos accusantium cupiditate dolorum, suscipit eum
+          quaerat qui? Odio reiciendis ut, modi placeat recusandae quia aperiam
+          adipisci distinctio quis? Reiciendis non iste, cumque vel a magnam
+          quis repellat nemo minima et assumenda tempora, architecto sed,
+          consequuntur iure consequatur fugit quo? Nobis enim cum voluptates
+          reprehenderit unde. Sunt reprehenderit odit laboriosam quae neque, eos
+          eligendi optio cum obcaecati ratione, quasi illum praesentium corporis
+          sint totam? Ut laboriosam accusantium saepe perspiciatis tenetur hic
+          soluta quisquam facere odit nobis amet facilis, repudiandae ratione
+          sed obcaecati. Necessitatibus vel perspiciatis cupiditate dignissimos
+          doloribus excepturi reprehenderit reiciendis pariatur nemo in autem
+          fugiat explicabo doloremque sapiente, corporis cum! Tempora voluptas
+          magnam non iusto neque. Laudantium dolores dolorem cupiditate illo,
+          ratione quidem quod, inventore rem porro aut autem numquam unde
+          mollitia libero officia eveniet sapiente nobis a repudiandae!
+          Repellendus deleniti excepturi asperiores provident inventore minus
+          esse praesentium error fugiat eveniet id dolorem quibusdam quia,
+          repudiandae sapiente. Omnis a rem excepturi temporibus hic, impedit
+          aspernatur reiciendis qui nam totam! Cumque quaerat necessitatibus
+          asperiores explicabo in sapiente dolore consectetur magnam velit
+          voluptate sit temporibus, incidunt, laudantium, consequatur sed fugiat
+          doloribus. Ratione labore debitis ut enim asperiores excepturi
+          eligendi, ullam facilis aspernatur earum ipsa voluptatibus minima eius
+          sunt neque deserunt perspiciatis molestias tempore magni tenetur!
+          Exercitationem animi, est delectus, et nulla nostrum ab earum, fuga
+          iure reiciendis harum. Pariatur debitis velit laudantium sint, nobis
+          ipsa autem ducimus enim inventore dolorum iste provident sed
+          asperiores itaque doloribus est placeat eligendi id obcaecati. Minus
+          tempore autem doloribus saepe cupiditate iusto quis nisi magnam
+          doloremque velit debitis labore quibusdam commodi deleniti enim
+          perspiciatis optio cum, distinctio quo, amet ab hic esse vero fugiat.
+          Dolores, natus veniam alias culpa porro blanditiis eius at quis,
+          numquam ipsa aut placeat beatae? Excepturi ipsam natus aut commodi
+          molestiae minus! Amet unde impedit recusandae at placeat, assumenda
+          pariatur corporis ullam quibusdam quod aspernatur iste cupiditate
+          tempora nemo officiis debitis. Ipsum quod quisquam animi, dolores
+          commodi adipisci aperiam quas, soluta debitis corrupti nostrum laborum
+          minima aut, iste optio quo eveniet! Ut, beatae iure?
+        </p>
+      </main>
+    </div>
+
+
+    <script>
+    var header = $('.header')
+    var headerContent = header.contents().clone() 
+    //header클래스의 -모든내용을 contents()- 복제하여clone()- headerContent 변수에 저장함.
+    console.log(headerContent)
+    var header2 = $('<header class="header2"></header>')  
+    //header의 클래스명을 header2로 변경하여 변수 header2에 저장함. 현재 header2는 비어있는 상태임.
+      header2.append(headerContent)  //append()는 선택한 요소header2의 내용의 끝에 콘텐트headerContent를 추가하는 메서드 
+      header2.prependTo('.container') //prependTo()매서드는 'container'에 header2를 넣는다.
+      //$( 추가할 내용 ).prependTo( target ); 새로운 요소를 타겟(Target)에 해당하는 요소 처음 부분에 추가 해줍니다.
+
+      console.log(header2)
+
+      var scrollValue = header.outerHeight() + 50  //outerHeight는 margin값을 포함한 높이를 의미함.
+
+      $(window).on('scroll', function () {
+        if ($(this).scrollTop() >= scrollValue) {
+          header2.addClass('show')
+        } else {
+          header2.removeClass('show')
+        }
+      })
+    
+    </script>
+  </body>
+</html>

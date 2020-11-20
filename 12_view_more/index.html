@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | view_more</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>view_more</h1>
+      
+    <ul class="list">
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+      <li>내용</li>
+    </ul>
+  <button id="btn">더보기</button>
+  </div>
+
+
+    <script>
+      var list = $('.list')
+      // console.log(list)
+      var btn = $('#btn')
+
+      // console.log(list.find('li'))
+      // var item = list.find('li').slice(0,9).show()
+      // console.log(item)
+
+
+      list.find('li').slice(0, 9).show() //화면초기화
+
+      btn.on('click', function () {
+        list.find('li:hidden').slice(0, 9).show()
+
+        if (list.find('li:hidden').length <= 0) {
+          btn.hide()
+        }
+      })
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery | filter</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>filter</h1>
+      <div class="btns">
+        <button data-id="all">all</button>
+        <button data-id="web">web</button>
+        <button data-id="ui">ui</button>
+        <button data-id="js">js</button>
+      </div>
+
+      <ul class="list">
+        <li class="ui" data-item="ui">ui</li>
+        <li class="web" data-item="web">web</li>
+        <li class="js" data-item="js">js</li>
+        <li class="web" data-item="web">web</li>
+        <li class="ui" data-item="ui">ui</li>
+        <li class="js" data-item="js">js</li>
+        <li class="web" data-item="web">web</li>
+        <li class="js" data-item="js">js</li>
+        <li class="ui" data-item="ui">ui</li>
+        <li class="js" data-item="js">js</li>
+        <li class="web" data-item="web">web</li>
+        <li class="js" data-item="js">js</li>
+      </ul>
+    </div>
+
+    <script>
+      var btns = $('.btns button')
+      var item = $('.list li')
+
+      btns.on('click', function (e) {
+        var categori = e.currentTarget.dataset.id
+
+        if (categori === 'all') {
+          item.fadeIn()
+        } else {
+          item //
+          .hide()
+          .filter('[data-item=' + categori + ']')  
+          // .show()
+          .slideDown()
+          // .fadeIn()  //다야한 방식으로 보여줄 수 있다.
+        }
+      })
+    </script>
+  </body>
+</html>
