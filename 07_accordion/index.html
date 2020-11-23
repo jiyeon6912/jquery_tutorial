@@ -69,6 +69,7 @@
         if($(this).hasClass('active')) {
           $(this).removeClass('active')
         } else {
+          $(this).parent('.accordion').find('h2').removeClass('active')
           $(this).addClass('active')
         }
       })
